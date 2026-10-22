@@ -37,6 +37,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
+  /* Gentle "push" to section starts; proximity never traps long sections */
+  scroll-snap-type: y proximity;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

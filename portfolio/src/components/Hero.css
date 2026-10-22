@@ -129,7 +129,7 @@
 }
 
 .hero__cta svg {
-  color: var(--accent);
+  color: #fff;
   transition: color 0.3s ease;
 }
 
@@ -194,9 +194,65 @@
   text-transform: uppercase;
 }
 
+/* Scroll cue: thin line with a dot travelling down, then a chevron */
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.hero__scroll:hover {
+  color: var(--text-primary);
+}
+
+.hero__scroll-line {
+  position: relative;
+  width: 1px;
+  height: 40px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -12px;
+  width: 1px;
+  height: 12px;
+  background: currentColor;
+  animation: hero-scroll-drop 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.hero__scroll-chevron {
+  animation: hero-scroll-nudge 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-drop {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(52px); }
+}
+
+@keyframes hero-scroll-nudge {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(4px); opacity: 1; }
+}
+
 @media (max-width: 768px) {
+  /* Fill the whole phone screen; bottom padding reserves room for badges + cue */
   .hero {
-    padding-bottom: 40px;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: calc(var(--nav-height) + 16px) 0 160px;
   }
   .hero__content {
     padding: 0 20px;
@@ -210,13 +266,18 @@
   .hero__ctas {
     margin-top: 28px;
   }
-  /* Badges join the flow under the CTAs instead of overlapping them */
   .hero__bottom {
-    position: static;
-    width: 100%;
-    margin-top: 48px;
+    left: 20px;
+    right: 20px;
+    bottom: 92px;
     gap: 16px;
     align-items: flex-start;
+  }
+  .hero__scroll {
+    bottom: 16px;
+  }
+  .hero__scroll-line {
+    height: 32px;
   }
   .hero__badge-main {
     font-size: 0.62rem;
@@ -247,9 +308,27 @@
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
+  .hero__ctas {
+    gap: 8px;
+  }
   .hero__cta {
-    padding: 0 16px;
-    font-size: 0.8rem;
+    padding: 0 14px;
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+}
+
+/* Keep all three buttons on one line on 360px phones */
+@media (max-width: 380px) {
+  .hero__ctas {
+    gap: 6px;
+  }
+  .hero__cta {
+    padding: 0 12px;
+  }
+  .hero__tagline-dim {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
   }
 }

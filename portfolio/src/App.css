@@ -3,6 +3,19 @@
   min-height: 100vh;
 }
 
+/* Scroll-snap points: each section, plus the main block inside tall sections */
+#home,
+#about,
+.about__bento,
+#experience,
+#projects,
+.work-group,
+#skills,
+.skills__pills,
+#contact {
+  scroll-snap-align: start;
+}
+
 /* Section dividers */
 section + section {
   border-top: 1px solid var(--border);

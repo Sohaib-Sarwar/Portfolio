@@ -3,7 +3,6 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import LayersOutlinedIcon from '@mui/icons-material/LayersOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import { personalInfo } from '../data/portfolio';
 import './Hero.css';
@@ -17,8 +16,13 @@ const ctas = [
   },
   { label: 'GitHub', href: personalInfo.github, icon: <GitHubIcon sx={{ fontSize: 18 }} />, external: true },
   { label: 'LinkedIn', href: personalInfo.linkedin, icon: <LinkedInIcon sx={{ fontSize: 18 }} />, external: true },
-  { label: 'Email', href: `mailto:${personalInfo.email}`, icon: <EmailOutlinedIcon sx={{ fontSize: 18 }} /> },
 ].filter(Boolean);
+
+// Smooth-scrolls to the About section from the scroll cue
+const scrollToAbout = (e) => {
+  e.preventDefault();
+  document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 
 export default function Hero() {
   return (
@@ -113,6 +117,22 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* Minimal scroll cue: a line with a travelling dot and a chevron */}
+      <motion.a
+        href="#about"
+        className="hero__scroll"
+        aria-label="Scroll down to the About section"
+        onClick={scrollToAbout}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+      >
+        <span className="hero__scroll-line" aria-hidden="true" />
+        <svg className="hero__scroll-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true">
+          <path d="M1 1l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </motion.a>
     </section>
   );
 }
