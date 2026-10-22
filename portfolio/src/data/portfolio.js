@@ -17,8 +17,8 @@ export const personalInfo = {
   availability: 'Open to remote, hybrid, and on-site roles.',
   university: "NUST '27",
   // Resume hosted on Google Drive: `resume` opens the viewer, `resumeDownload` downloads the file
-  resume: 'https://drive.google.com/file/d/1Fklg7oHW80MRSa8RMlvbNg1CYgmkTG3d/view',
-  resumeDownload: 'https://drive.google.com/uc?export=download&id=1Fklg7oHW80MRSa8RMlvbNg1CYgmkTG3d',
+  resume: 'https://drive.google.com/file/d/1DwgG2PXgfY46R5xKqMwTE8Lnv0sw0_iL/view',
+  resumeDownload: 'https://drive.google.com/uc?export=download&id=1DwgG2PXgfY46R5xKqMwTE8Lnv0sw0_iL',
   summary:
     'Software Engineer at 99 Technologies shipping production software for US clients. Fast-tracked from intern to full-time engineer in 12 months, owning the full lifecycle (design, full-stack development, QA, deployment, launch) on 2 live platforms serving 9+ US business locations. Security-first, test-driven, documentation-driven. Final-year Software Engineering student at NUST SEECS.',
   tagline: 'I ENGINEER AND BUILD SYSTEMS THAT',
