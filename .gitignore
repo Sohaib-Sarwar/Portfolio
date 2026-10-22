@@ -1,0 +1,17 @@
+# Private working docs (contain personal contact details) — never publish
+Context.md
+*.tex
+
+# Root npm stubs (the app lives in portfolio/)
+/package.json
+/package-lock.json
+
+# Dependencies and build output
+node_modules/
+dist/
+
+# Editor backups
+*.bak
+
+# Vercel
+.vercel

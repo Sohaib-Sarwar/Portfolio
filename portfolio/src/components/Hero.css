@@ -1,0 +1,145 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Opening reveal overlays - split from center */
+.hero__reveal-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: var(--bg-primary);
+  z-index: 50;
+}
+
+.hero__reveal-left {
+  left: 0;
+  transform-origin: left center;
+}
+
+.hero__reveal-right {
+  right: 0;
+  transform-origin: right center;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48px;
+}
+
+.hero__name-wrapper {
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+}
+
+.hero__name {
+  font-family: var(--font-hero);
+  font-size: clamp(6rem, 18vw, 16rem);
+  font-weight: 400;
+  letter-spacing: 6px;
+  color: var(--text-primary);
+  line-height: 0.85;
+  user-select: none;
+}
+
+.hero__tagline {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__tagline-dim {
+  font-family: var(--font-primary);
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.hero__tagline-italic {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Bottom badges */
+.hero__bottom {
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+  right: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__badge-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__badge-main {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.hero__badge-sub {
+  font-family: var(--font-primary);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    padding: 0 20px;
+  }
+  .hero__bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .hero__tagline-dim {
+    letter-spacing: 3px;
+  }
+}

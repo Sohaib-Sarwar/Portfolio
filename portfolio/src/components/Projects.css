@@ -1,0 +1,273 @@
+/* ===== Projects / MY WORKS ===== */
+
+.projects {
+  padding: 0;
+}
+
+/* --- Giant title hero with center reveal --- */
+.projects__hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #111 0%, #000 70%);
+}
+
+.projects__reveal-left,
+.projects__reveal-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: var(--bg-primary);
+  z-index: 10;
+}
+
+.projects__reveal-left { left: 0; }
+.projects__reveal-right { right: 0; }
+
+.projects__hero-inner {
+  z-index: 5;
+}
+
+.projects__mega-title {
+  font-family: var(--font-hero);
+  font-size: clamp(5rem, 18vw, 16rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.projects__hero-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.projects__hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.projects__hero-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* --- Project cards - 2 column grid --- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 80px 0 40px;
+}
+
+.projects__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projects__card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Red accent dash at top of card */
+.projects__card-accent {
+  width: 36px;
+  height: 3px;
+  background: linear-gradient(90deg, #cc2222, #ff4444);
+  border-radius: 2px;
+}
+
+/* Card header */
+.projects__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.projects__card-number {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.projects__card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.projects__card-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.projects__card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Features with star bullets */
+.projects__card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projects__card-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.projects__star {
+  color: #ff4444;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Tech pills with logos */
+.projects__card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.projects__tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.projects__tech-pill:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.projects__tech-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Card actions */
+.projects__card-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.projects__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.projects__card-link:hover {
+  color: var(--accent-green);
+}
+
+/* --- See more link --- */
+.projects__more {
+  text-align: center;
+  padding: 24px 0 60px;
+}
+
+.projects__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.projects__more-link:hover {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+  background: var(--accent-green-dim);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects__hero {
+    min-height: 50vh;
+  }
+  .projects__card {
+    padding: 24px;
+  }
+  .projects__card-title {
+    font-size: 1.15rem;
+  }
+  .projects__hero-sub {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
