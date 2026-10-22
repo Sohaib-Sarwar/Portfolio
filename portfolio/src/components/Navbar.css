@@ -68,8 +68,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent-green);
-  box-shadow: 0 0 8px var(--accent-green);
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
   flex-shrink: 0;
 }
 
@@ -91,7 +91,7 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 2px;
-  color: var(--accent-green);
+  color: var(--accent);
   text-transform: uppercase;
 }
 
@@ -194,21 +194,51 @@
 .navbar__hamburger {
   display: none;
   color: var(--text-primary);
-  padding: 4px;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 /* Mobile menu */
 .mobile-menu {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
   z-index: 999;
   background: var(--bg-primary);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 48px;
+  padding: var(--nav-height) 24px 32px;
+  overscroll-behavior: contain;
+}
+
+.mobile-menu__social {
+  display: flex;
+  gap: 12px;
+}
+
+.mobile-menu__social a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-menu__social a:hover {
+  color: var(--accent);
+  border-color: var(--accent-border);
 }
 
 .mobile-menu__links {
@@ -228,19 +258,25 @@
 }
 
 .mobile-menu__link:hover {
-  color: var(--accent-green);
+  color: var(--accent);
 }
 
-@media (max-width: 900px) {
+/* Collapse before the centered pill can collide with the side groups */
+@media (max-width: 1024px) {
   .navbar__inner {
     padding: 0 20px;
   }
   .navbar__center,
-  .navbar__right,
-  .navbar__descriptor {
+  .navbar__right {
     display: none;
   }
   .navbar__hamburger {
-    display: block;
+    display: flex;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar__descriptor {
+    display: none;
   }
 }

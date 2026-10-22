@@ -57,7 +57,7 @@ export default function Extras() {
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             <div className="extras__card-top">
-              <SportsEsportsIcon sx={{ fontSize: 20, color: 'var(--accent-green)' }} />
+              <SportsEsportsIcon sx={{ fontSize: 20, color: 'var(--accent)' }} />
               <h3 className="extras__card-title">Interests</h3>
             </div>
             <div className="extras__hobbies">
@@ -78,7 +78,7 @@ export default function Extras() {
             transition={{ delay: 0.35, duration: 0.6 }}
           >
             <div className="extras__card-top">
-              <TranslateIcon sx={{ fontSize: 20, color: 'var(--accent-green)' }} />
+              <TranslateIcon sx={{ fontSize: 20, color: 'var(--accent)' }} />
               <h3 className="extras__card-title">Languages</h3>
             </div>
             <div className="extras__languages">
@@ -99,7 +99,7 @@ export default function Extras() {
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             <div className="extras__card-top">
-              <ExploreIcon sx={{ fontSize: 20, color: 'var(--accent-green)' }} />
+              <ExploreIcon sx={{ fontSize: 20, color: 'var(--accent)' }} />
               <h3 className="extras__card-title">Currently Exploring</h3>
             </div>
             <div className="extras__exploring">

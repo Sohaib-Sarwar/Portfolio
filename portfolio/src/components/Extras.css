@@ -21,7 +21,7 @@
   top: 0;
   width: 50%;
   height: 100%;
-  background: var(--accent-green);
+  background: var(--accent);
   z-index: 2;
 }
 
@@ -58,7 +58,7 @@
 .extras__hero-sub {
   font-family: var(--font-serif);
   font-style: italic;
-  color: var(--accent-green);
+  color: var(--accent);
   font-size: clamp(1rem, 2vw, 1.3rem);
   margin-top: 12px;
   z-index: 1;
@@ -79,7 +79,7 @@
 .extras__accent {
   font-family: var(--font-serif);
   font-style: italic;
-  color: var(--accent-green);
+  color: var(--accent);
 }
 
 .extras__grid {
@@ -97,7 +97,7 @@
 }
 
 .extras__card:hover {
-  border-color: var(--accent-green);
+  border-color: var(--accent);
   transform: translateY(-3px);
 }
 
@@ -129,7 +129,7 @@
 }
 
 .extras__hobby-icon {
-  color: var(--accent-green);
+  color: var(--accent);
   display: flex;
   font-size: 0.85rem;
 }
@@ -160,7 +160,7 @@
 
 .extras__lang-level {
   font-size: 0.72rem;
-  color: var(--accent-green);
+  color: var(--accent);
   font-family: var(--font-mono);
   letter-spacing: 0.5px;
 }
@@ -176,8 +176,8 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
-  color: var(--accent-green);
-  background: var(--accent-green-dim);
+  color: var(--accent);
+  background: var(--accent-dim);
   padding: 5px 14px;
   border-radius: 100px;
   letter-spacing: 0.3px;

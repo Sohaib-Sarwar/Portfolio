@@ -36,12 +36,37 @@
   background-clip: text;
 }
 
+.experience__highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  padding: 8px 16px;
+  border: 1px solid var(--accent-border);
+  border-radius: 100px;
+  background: var(--accent-dim);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.experience__highlight svg {
+  color: var(--accent);
+}
+
+.experience__highlight strong {
+  color: var(--text-primary);
+}
+
 /* Timeline container */
 .experience__timeline {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+.experience__entries {
+  list-style: none;
 }
 
 /* The vertical track (line + glow) */
@@ -184,11 +209,34 @@
   line-height: 1.2;
 }
 
+.experience__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .experience__text {
+  position: relative;
+  padding-left: 18px;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.experience__text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 1px;
+  background: #ff4444;
+}
+
+.experience__text strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* Mobile */
@@ -217,9 +265,25 @@
     grid-column: 2;
     padding-left: 0;
   }
+  /* Center the track on the 48px node column (24px padding + 24px) */
   .experience__track {
-    left: 24px;
-    transform: none;
+    left: 48px;
+  }
+  .experience__title {
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
+  .experience__header {
+    margin-bottom: 56px;
+  }
+  .experience__entry {
+    padding: 32px 0;
+  }
+  .experience__company {
+    font-size: 1.3rem;
+  }
+  .experience__role {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
   }
   .experience__dot {
     width: 8px;

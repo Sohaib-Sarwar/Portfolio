@@ -171,9 +171,12 @@ export default function Skills() {
             <span className="skills__certs-label">CERTIFICATIONS</span>
           </div>
           <div className="skills__certs-grid">
-            {certifications.map((cert, i) => (
-              <motion.div
-                key={i}
+            {certifications.map((cert) => (
+              <motion.a
+                key={cert.url}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="skills__cert-card"
                 whileHover={{ scale: 1.02, y: -4 }}
                 transition={{ duration: 0.25 }}
@@ -182,10 +185,10 @@ export default function Skills() {
                   <VerifiedIcon sx={{ fontSize: 28, color: '#4285f4' }} />
                 </div>
                 <div className="skills__cert-info">
-                  <span className="skills__cert-name">{cert}</span>
+                  <span className="skills__cert-name">{cert.title} &mdash; {cert.issuer}</span>
                   <span className="skills__cert-issuer">Google Cloud</span>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>

@@ -49,7 +49,7 @@
 }
 
 .footer__nav-link:hover {
-  color: var(--accent-green);
+  color: var(--accent);
 }
 
 .footer__social {
@@ -71,9 +71,9 @@
 }
 
 .footer__social-icon:hover {
-  color: var(--accent-green);
-  border-color: var(--accent-green);
-  background: var(--accent-green-dim);
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
 }
 
 /* Bottom bar */

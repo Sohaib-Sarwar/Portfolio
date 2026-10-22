@@ -1,5 +1,4 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, MotionConfig } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -11,38 +10,39 @@ import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
 import './App.css'
 
-/* Scroll-driven section reveal: opens from center with scale + clip */
+/* Scroll-driven section reveal: a light fade-up (cheap on mobile GPUs) */
 function SectionReveal({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.05 })
-
   return (
-    <div ref={ref} style={{ overflow: 'hidden' }}>
-      <motion.div
-        initial={{ opacity: 0, scaleY: 0.92, clipPath: 'inset(8% 4% 8% 4%)' }}
-        animate={isInView ? { opacity: 1, scaleY: 1, clipPath: 'inset(0% 0% 0% 0%)' } : {}}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        style={{ transformOrigin: 'center center' }}
-      >
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </motion.div>
   )
 }
 
 function App() {
   return (
-    <div className="app">
-      <CustomCursor />
-      <Navbar />
-      <Hero />
-      <SectionReveal><About /></SectionReveal>
-      <SectionReveal><Experience /></SectionReveal>
-      <SectionReveal><Projects /></SectionReveal>
-      <SectionReveal><Skills /></SectionReveal>
-      <SectionReveal><Contact /></SectionReveal>
-      <Footer />
-    </div>
+    // Honors the OS "reduce motion" setting for every framer-motion animation
+    <MotionConfig reducedMotion="user">
+      <div className="app">
+        <a href="#main" className="skip-link">Skip to content</a>
+        <CustomCursor />
+        <Navbar />
+        <main id="main">
+          <Hero />
+          <SectionReveal><About /></SectionReveal>
+          <SectionReveal><Experience /></SectionReveal>
+          <SectionReveal><Projects /></SectionReveal>
+          <SectionReveal><Skills /></SectionReveal>
+          <SectionReveal><Contact /></SectionReveal>
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   )
 }
 

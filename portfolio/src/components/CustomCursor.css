@@ -1,5 +1,7 @@
 /* ===== Custom Cursor - Luxury minimal style ===== */
-* {
+/* Native cursor is hidden only after JS confirms a fine pointer (see CustomCursor.jsx) */
+html.has-custom-cursor,
+html.has-custom-cursor * {
   cursor: none !important;
 }
 
@@ -24,9 +26,8 @@
 }
 
 .cursor-dot--hover {
-  background: var(--accent-green);
+  background: var(--accent);
   mix-blend-mode: normal;
-  transform: scale(0.6);
 }
 
 .cursor-ring {
@@ -37,22 +38,23 @@
   mix-blend-mode: difference;
   transition: width 0.35s cubic-bezier(0.23, 1, 0.32, 1),
               height 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+              margin 0.35s cubic-bezier(0.23, 1, 0.32, 1),
               border-color 0.3s ease,
-              background 0.3s ease;
+              background 0.3s ease,
+              opacity 0.3s ease;
 }
 
+/* Grow around the pointer (negative margin keeps it centered) */
 .cursor-ring--hover {
   width: 48px;
   height: 48px;
-  border-color: var(--accent-green);
+  margin: -8px 0 0 -8px;
+  border-color: var(--accent);
   background: rgba(0, 204, 102, 0.06);
   mix-blend-mode: normal;
 }
 
-@media (pointer: coarse) {
-  * {
-    cursor: auto !important;
-  }
+@media (hover: none), (pointer: coarse) {
   .cursor-dot,
   .cursor-ring {
     display: none;
