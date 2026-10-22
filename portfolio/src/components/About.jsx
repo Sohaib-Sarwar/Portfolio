@@ -8,7 +8,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import WorkIcon from '@mui/icons-material/Work';
 import PlaceIcon from '@mui/icons-material/Place';
 import { personalInfo } from '../data/portfolio';
-import profilePic from '../assets/Profile.jpeg';
+import profilePic from '../assets/profile.webp';
 import './About.css';
 
 /* Premium 12-hour analog clock — sleek minimal */
@@ -488,7 +488,7 @@ export default function About() {
               </div>
               <p className="about__bio-text">
                 <span className="about__bio-highlight">Software Engineer</span> at{' '}
-                <span className="about__bio-accent">99 Technologies</span> — building production‑grade full‑stack apps with React, Node &amp; GCP.
+                <span className="about__bio-accent">99 Technologies</span> — building production‑grade polyglot apps with React, Node &amp; GCP.
               </p>
             </div>
             <div className="about__tl-mid">
@@ -531,7 +531,7 @@ export default function About() {
                 <h3 className="about__profile-name">Muhammad Sohaib Sarwar</h3>
                 <div className="about__profile-role">
                   <span className="about__profile-role-dot" />
-                  FULL STACK ENGINEER
+                  POLYGLOT ENGINEER
                 </div>
               </div>
             </div>

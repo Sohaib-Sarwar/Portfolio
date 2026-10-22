@@ -3,8 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-// Console messages
-console.clear()
+// Console messages (no console.clear: it wipes real errors during debugging)
 console.log(
   '%cBUILT BY MUHAMMAD SOHAIB SARWAR',
   'color: #4FC3F7; font-size: 20px; font-weight: bold; font-family: monospace;'
